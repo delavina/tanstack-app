@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router'
 
 export function NotFound({ children }: { children?: React.ReactNode }) {
   return (
-    <main className="page-wrap p-8 text-center space-y-4">
+    <main className="page-wrap p-16 text-center space-y-4">
       <h1 className="text-4xl font-bold">404</h1>
       <p className="text-lg text-(--sea-ink-soft)">
         {children || "The page you are looking for doesn't exist."}
