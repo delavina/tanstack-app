@@ -77,7 +77,9 @@ export const assets: DigitalAsset[] = [
 		tags: ["Virtual Production", "Unreal", "LED Stage", "8K"],
 		type: "image",
 		price: 59.99,
-		previewUrl: "../placeholder.svg",
+		previewUrl:
+			"https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=600&q=80",
+		secureDownloadUrl: "/downloads/vp-8k-led-wall-panoramen.zip",
 		createdAt: "2026-10-31T11:20:00Z",
 		authorClerkId: "user_6eN5uO9s",
 		authorEmail: "vp@unrealfilm.org",

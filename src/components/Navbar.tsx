@@ -12,7 +12,7 @@ const Navbar = () => {
 			<div className="brand">
 				<Link to="/" className="flex items-center gap-2 md:gap-3">
 					<img src={dogonLogo} alt="Dogon Logo" className="h-7 w-auto md:h-8" />
-					<span>digital props and assets</span>
+					<span>digital assets</span>
 				</Link>
 			</div>
 
