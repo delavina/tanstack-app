@@ -32,7 +32,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			},
 			{
 				title: "digital props and assets",
-			}, {
+			},
+			{
 				name: "description",
 				content: "digital props and assets for filmmaking",
 			},
