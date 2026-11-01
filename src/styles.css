@@ -622,6 +622,14 @@
       }
     }
 
+    .comments {
+      @apply flex items-center gap-1.5 text-text-muted;
+
+      span {
+        @apply text-sm;
+      }
+    }
+
     .price {
       @apply flex items-center gap-1.5 text-text-muted;
 

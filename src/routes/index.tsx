@@ -78,7 +78,7 @@ function App() {
 						Latest assets loaded from database in descending creation order.
 					</p>
 				</div>
-				<div className="assets-grid">
+	{/* 			<div className="assets-grid">
 					{assets.map((asset) => (
 						<article key={asset.id} className="asset-card">
 							<div className="chrome">
@@ -120,7 +120,7 @@ function App() {
 							</div>
 						</article>
 					))}
-				</div>
+				</div> */}
 
 			<div>
 					{assets.length > 0 ? (

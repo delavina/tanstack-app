@@ -132,8 +132,10 @@ const DigitalAssetCard = ({
 							<ArrowBigUp size={16} fill="currentColor" />
 							<span>{tags.length}</span>
 						</button>
-
-						
+						<div className="comments">
+							<MessageSquare size={14} />
+							<span>{authorEmail ? 1 : 0}</span>
+						</div>
 					</div>
 
 					<div className="actions">
