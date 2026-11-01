@@ -27,9 +27,9 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-	//	const posthog = usePostHog();
+	// const posthog = usePostHog();
 
-	//	const assets = Route.useLoaderData();
+	// const assets = Route.useLoaderData();
 
 	return (
 		<div id="home">
@@ -51,17 +51,19 @@ function App() {
 
 				<div className="actions">
 					<Link
-						to="/assets"
+						to="/"
 						className="btn-primary"
-						onClick={() => posthog.capture("browse_registry_clicked")}
+						// TODO: replace with /assets once that route exists
+						// onClick={() => posthog.capture("browse_registry_clicked")}
 					>
 						<Terminal size={18} />
 						<span>Entdecken</span>
 					</Link>
 					<Link
-						to="/assets/new"
+						to="/"
 						className="btn-secondary"
-						onClick={() => posthog.capture("publish_asset_clicked")}
+						// TODO: replace with /assets/new once that route exists
+						// onClick={() => posthog.capture("publish_asset_clicked")}
 					>
 						Veröffentlichen
 					</Link>
@@ -78,51 +80,8 @@ function App() {
 						Latest assets loaded from database in descending creation order.
 					</p>
 				</div>
-	{/* 			<div className="assets-grid">
-					{assets.map((asset) => (
-						<article key={asset.id} className="asset-card">
-							<div className="chrome">
-								<div className="chrome-bar">
-									<div className="lights">
-										<div className="light red" />
-										<div className="light amber" />
-										<div className="light green" />
-									</div>
-									<div className="host">{asset.type.toUpperCase()}</div>
-								</div>
-							</div>
 
-							<div className="body">
-								<div className="meta">
-									<p className="category">{asset.category}</p>
-									<span className="font-semibold text-accent-primary">
-										{asset.price.toFixed(2)} €
-									</span>
-								</div>
-
-								<div className="summary">
-									<h3 className="text-xl font-bold">{asset.title}</h3>
-									<p className="text-sm text-text-muted">{asset.description}</p>
-								</div>
-
-								<div className="footer mt-auto pt-4 flex items-center justify-between">
-									<div className="flex gap-1.5 flex-wrap">
-										{asset.tags.map((tag) => (
-											<span
-												key={tag}
-												className="text-xs px-2 py-0.5 rounded-full bg-border-subtle/50 text-text-muted"
-											>
-												{tag}
-											</span>
-										))}
-									</div>
-								</div>
-							</div>
-						</article>
-					))}
-				</div> */}
-
-			<div>
+				<div>
 					{assets.length > 0 ? (
 						<div className="assets-grid">
 							{assets.map((asset) => (
@@ -132,7 +91,7 @@ function App() {
 					) : (
 						<p>No assets have been created yet.</p>
 					)}
-				</div> 
+				</div>
 			</section>
 		</div>
 	);

@@ -3,9 +3,6 @@ import {
 	ArrowBigUp,
 	ArrowUpRight,
 	Bookmark,
-	Check,
-	Copy,
-	Euro,
 	MessageSquare,
 } from "lucide-react";
 // import { usePostHog } from "posthog-js/react";
@@ -28,7 +25,7 @@ const DigitalAssetCard = ({
 	authorClerkId,
 	authorEmail,
 }: DigitalAssetCardProps) => {
-	const [copied, setCopied] = useState(false);
+	const [_copied, setCopied] = useState(false);
 	// const posthog = usePostHog();
 
 	const commandText = slug ? `asset get ${slug}` : `asset:${id}`;
@@ -53,13 +50,16 @@ const DigitalAssetCard = ({
 		}
 	};
 
+	void handleCopy; // TODO: wire up copy button when command UI is re-enabled
+
 	return (
 		<article className="asset-card">
 			<Link
-				to="/assets"
+				to="/"
 				tabIndex={-1}
 				aria-label={`Open ${title}`}
 				className="overlay"
+				// TODO: replace with /assets/$slug once that route exists
 			/>
 
 			<div className="chrome">
@@ -82,7 +82,8 @@ const DigitalAssetCard = ({
 				)}
 
 				<div className="summary">
-					<Link to="/assets" className="title-link">
+					<Link to="/" className="title-link">
+						{/* TODO: replace with /assets/$slug once that route exists */}
 						<h3>{title}</h3>
 					</Link>
 
@@ -104,14 +105,14 @@ const DigitalAssetCard = ({
 						</div>
 					</div>
 					<div className="price">
-							<span className="overflow-hidden font-semibold text-accent-primary whitespace-nowrap">
-								{price.toFixed(2)} €
-							</span>
-						</div>
+						<span className="overflow-hidden font-semibold text-accent-primary whitespace-nowrap">
+							{price.toFixed(2)} €
+						</span>
+					</div>
 				</div>
 
-				{/* Copy command with check if copied */}
-{/* 				<div className="command">
+				{/* Copy command — re-enable when command UI is needed
+				<div className="command">
 					<div className="command-copy">
 						<span>{">_"}</span>
 						<p>{commandText}</p>
@@ -122,9 +123,10 @@ const DigitalAssetCard = ({
 						onClick={handleCopy}
 						aria-label="Copy asset command"
 					>
-						{copied ? <Check size={16} /> : <Copy size={16} />}
+						{_copied ? <Check size={16} /> : <Copy size={16} />}
 					</button>
-				</div> */}
+				</div>
+				*/}
 
 				<div className="footer">
 					<div className="stats">
@@ -140,9 +142,10 @@ const DigitalAssetCard = ({
 
 					<div className="actions">
 						<Link
-							to="/assets"
+							to="/"
 							className="open"
 							title={`Open ${title}`}
+							// TODO: replace with /assets/$slug once that route exists
 							/* onClick={() =>
 								posthog?.capture?.("asset_opened", {
 									asset_title: title,
